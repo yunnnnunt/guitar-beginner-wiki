@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>吉他入門基礎總覽</title>
+  <style>
+    :root {
+      --bg: #FAF7F2;
+      --card: #FFFFFF;
+      --line: #E5DEC9;
+      --ink: #2C1E16;
+      --muted: #5F5148;
+      --accent: #D97706;
+      --accent-soft: #F4D7A8;
+      --warning: #B91C1C;
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Segoe UI", "Microsoft JhengHei", sans-serif;
+      overflow: hidden;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .deck {
+      width: min(94vw, 1280px);
+      height: min(76vh, 720px);
+      background: linear-gradient(180deg, #fffdfb 0%, #f5efe6 100%);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 22px 50px rgba(44, 30, 22, 0.08);
+      position: relative;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      padding: 52px 60px 68px;
+      display: none;
+      grid-template-rows: auto 1fr auto;
+    }
+
+    .slide.active {
+      display: grid;
+    }
+
+    .slide-tag {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 700;
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    h1, h2, h3 { margin: 0; }
+    h1 {
+      font-size: clamp(2.1rem, 2.5vw, 3.2rem);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+    h2 {
+      font-size: clamp(1.8rem, 2.2vw, 2.8rem);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .content {
+      display: grid;
+      gap: 18px;
+      align-content: start;
+    }
+
+    .slide-visual {
+      margin: 0;
+      text-align: center;
+    }
+
+    .slide-visual img {
+      display: block;
+      width: min(100%, 900px);
+      max-height: 220px;
+      object-fit: contain;
+      margin: 0 auto;
+    }
+
+    .slide-visual.tall img {
+      max-height: 280px;
+    }
+
+    .slide-visual figcaption {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .hero {
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .hero-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card-grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .anatomy-layout {
+      grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+      align-items: center;
+    }
+
+    .anatomy-figure {
+      margin: 0;
+      min-width: 0;
+    }
+
+    .anatomy-figure img {
+      display: block;
+      width: 100%;
+      max-height: 430px;
+      object-fit: contain;
+    }
+
+    .anatomy-figure figcaption {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      text-align: center;
+    }
+
+    .anatomy-copy {
+      display: grid;
+      gap: 12px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.8);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px 20px;
+      box-shadow: 0 10px 18px rgba(44,30,22,0.03);
+    }
+
+    .card h3 {
+      font-size: 1.12rem;
+      margin-bottom: 10px;
+    }
+
+    .card p, .card li, .bullet, .notes {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    .note {
+      background: rgba(217, 119, 6, 0.08);
+      border-left: 4px solid var(--accent);
+      border-radius: 12px;
+      padding: 12px 16px;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .warning {
+      background: rgba(185, 28, 28, 0.06);
+      border-left: 4px solid var(--warning);
+      border-radius: 12px;
+      padding: 12px 16px;
+      color: var(--warning);
+      font-weight: 700;
+    }
+
+    .big-number {
+      font-size: clamp(4rem, 7vw, 8rem);
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      margin: 0;
+    }
+
+    .mini {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .progress {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 6px;
+      background: rgba(44,30,22,0.08);
+    }
+
+    .progress-bar {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent) 0%, #f0aa54 100%);
+      transition: width 0.25s ease;
+    }
+
+    .footer {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 22px;
+      color: var(--muted);
+      font-size: 0.76rem;
+      letter-spacing: 0.04em;
+    }
+
+    .speaker {
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      display: none;
+      max-width: 320px;
+      background: rgba(255,255,255,0.82);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 10px 12px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.6;
+      box-shadow: 0 10px 18px rgba(44,30,22,0.04);
+    }
+
+    .speaker.visible {
+      display: block;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    button {
+      appearance: none;
+      border: none;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 10px;
+      padding: 10px 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    button.secondary {
+      background: #fff;
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+
+    @media (max-width: 900px) {
+      .deck { width: 96vw; height: 82vh; }
+      .slide { padding: 34px 22px 62px; }
+      .hero, .hero-box, .card-grid, .card-grid.two { grid-template-columns: 1fr; }
+      .anatomy-layout { grid-template-columns: 1fr; gap: 10px; overflow: auto; }
+      .anatomy-figure img { max-height: 250px; }
+      .slide-visual img { max-height: 170px; }
+      .slide-visual.tall img { max-height: 220px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="deck">
+    <div class="slide active">
+      <div>
+        <div class="slide-tag">吉他入門</div>
+        <h1>吉他入門基礎總覽</h1>
+      </div>
+      <div class="content hero">
+        <div class="hero-box">
+          <div>
+            <div class="note">從零開始，不靠速成；先建立正確順序，再穩定累積進步。</div>
+            <ul class="bullet" style="margin-top: 18px;">
+              <li>先理解樂器與選購</li>
+              <li>再建立定弦與持琴姿勢</li>
+              <li>接著帶入節奏與和弦</li>
+              <li>最後用練習計畫持續成長</li>
+            </ul>
+          </div>
+          <div>
+            <p class="big-number">4</p>
+            <div class="mini">核心支柱：樂器 / 手型 / 節奏 / 和弦</div>
+          </div>
+        </div>
+      </div>
+      <div class="speaker">講者備忘錄：學吉他最怕的不是難，而是沒有正確順序。</div>
+    </div>
+
+    <div class="slide">
+      <div>
+        <div class="slide-tag">樂器</div>
+        <h2>先認識樂器：你手上的工具是什麼</h2>
+      </div>
+      <div class="content anatomy-layout">
+        <figure class="anatomy-figure">
+          <img src="assets/吉他基本構造示意圖.svg" alt="吉他構造示意圖，標示琴頭、琴頸、琴身、琴弦、品絲、音孔與琴橋" />
+          <figcaption>吉他基本構造示意圖（非比例繪製）</figcaption>
+        </figure>
+        <div class="anatomy-copy">
+          <div class="card">
+            <h3>核心構造</h3>
+            <ul>
+              <li>琴身：影響共鳴與音色</li>
+              <li>琴頸與品絲：提供按弦位置</li>
+              <li>琴弦：振動發聲，決定音高</li>
+              <li>音孔與琴橋：木吉他的重要構造</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>三大琴種</h3>
+            <ul>
+              <li>民謠吉他：適合自學與自彈自唱</li>
+              <li>電吉他：音色變化多，常搭配擴音器</li>
+              <li>古典吉他：尼龍弦，音色柔和</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="speaker">講者備忘錄：選購時不要只看價格，真正重要的是是否適合你的手型和練習習慣。</div>
+    </div>
+
+    <div class="slide">
+      <div>
+        <div class="slide-tag">基礎</div>
+        <h2>定弦與持琴：穩定的開始，不靠硬撐</h2>
+      </div>
+      <div class="content">
+        <figure class="slide-visual">
+          <img src="../../wiki/assets/標準定弦六弦圖.svg" alt="吉他六根弦由低音至高音的標準音名排列" />
+          <figcaption>由低音弦至高音弦：E、A、D、G、B、E</figcaption>
+        </figure>
+        <div class="card-grid">
+          <div class="card">
+            <h3>標準定弦</h3>
+            <p>E-A-D-G-B-E</p>
+          </div>
+          <div class="card">
+            <h3>五品調音法</h3>
+            <p>利用品位與下一根空弦的關係做相對校準。</p>
+          </div>
+          <div class="card">
+            <h3>三點持琴法</h3>
+            <p>背部、腿部與手臂共同支撐，減少緊張。</p>
+          </div>
+        </div>
+      </div>
+      <div class="speaker">講者備忘錄：姿勢不對，後面的技巧會一直受限。</div>
+    </div>
+
+    <div class="slide">
+      <div>
+        <div class="slide-tag">技巧</div>
+        <h2>右手與左手的分工：手型決定聲音品質</h2>
+      </div>
+      <div class="content">
+        <figure class="slide-visual">
+          <img src="../../wiki/assets/上下掃弦方向圖.svg" alt="下掃與上掃方向及放鬆手腕的提示圖" />
+          <figcaption>先讓手腕保持自然，再練習穩定掃過琴弦</figcaption>
+        </figure>
+        <div class="card-grid two">
+          <div class="card">
+            <h3>左手</h3>
+            <ul>
+              <li>用指尖按弦</li>
+              <li>避免整掌壓琴頸</li>
+              <li>用最小力量完成清晰發音</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>右手</h3>
+            <ul>
+              <li>先求穩，不求大聲</li>
+              <li>手腕自然鬆開</li>
+              <li>節奏感優先於音量</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="speaker">講者備忘錄：音量太大常常代表力量不對，而不是技術更進步。</div>
+    </div>
+
+    <div class="slide">
+      <div>
+        <div class="slide-tag">和弦</div>
+        <h2>和弦與樂理：從最實用的開放和弦開始</h2>
+      </div>
+      <div class="content">
+        <figure class="slide-visual tall">
+          <img src="../../wiki/assets/C與Am開放和弦圖.svg" alt="C 大調與 a 小調開放和弦的六弦指板按法圖" />
+          <figcaption>先對照每根弦，再逐一確認按弦聲音清楚</figcaption>
+        </figure>
+        <div class="card-grid two">
+          <div class="card">
+            <h3>C 大調</h3>
+            <p>明亮、穩定，適合初學者練習。</p>
+          </div>
+          <div class="card">
+            <h3>a 小調</h3>
+            <p>音色柔和，和 C 大調搭配自然。</p>
+          </div>
+        </div>
+      </div>
+      <div class="speaker">講者備忘錄：先學會用，才能再談進階。</div>
+    </div>
+
+    <div class="slide">
+      <div>
+        <div class="slide-tag">理論</div>
+        <h2>譜面與節奏：把聲音變成可重複的技能</h2>
+      </div>
+      <div class="content">
+        <figure class="slide-visual tall">
+          <img src="../../wiki/assets/TAB六線譜讀法圖.svg" alt="TAB 六線譜上弦線與品位數字的示意圖" />
+          <figcaption>先辨認弦序，再依數字讀取品位</figcaption>
+        </figure>
+        <div class="card-grid">
+          <div class="card">
+            <h3>簡譜</h3>
+            <p>理解音名與音符時值，建立節奏感。</p>
+          </div>
+          <div class="card">
+            <h3>TAB</h3>
+            <p>知道哪一弦、哪一格、怎麼按。</p>
+          </div>
+          <div class="card">
+            <h3>和弦圖</h3>
+            <p>理解整體和弦結構與按法位置。</p>
+          </div>
+        </div>
+      </div>
+      <div class="speaker">講者備忘錄：讀譜不是靠背，而是靠理解一個小間隔接著理解下一個。</div>
+    </div>
+
+    <div class="slide">
+      <div>
+        <div class="slide-tag">練習</div>
+        <h2>練習路線：穩定累積才是真正的成長</h2>
+      </div>
+      <div class="content">
+        <figure class="slide-visual tall">
+          <img src="../../wiki/assets/十課循序練習路線圖.svg" alt="從認識吉他到成果演奏的十課循序練習流程" />
+          <figcaption>依照十課路線逐步累積技能，不必跳級求快</figcaption>
+        </figure>
+        <div class="card">
+          <ul>
+            <li>先定弦與手型</li>
+            <li>再練撥弦與掃弦</li>
+            <li>再建立 C/a 和弦轉換</li>
+            <li>最後以短歌與節奏整合進階</li>
+          </ul>
+        </div>
+      </div>
+      <div class="speaker">講者備忘錄：每天 15～20 分鐘、長期穩定，比一次猛練更有價值。</div>
+    </div>
+
+    <div class="slide">
+      <div>
+        <div class="slide-tag">結論</div>
+        <h2>真正的吉他入門不是學很多，而是學得穩定</h2>
+      </div>
+      <div class="content">
+        <div class="warning">先穩定，再擴張；先理解，再動手；先持續，再進階。</div>
+        <div class="actions">
+          <button onclick="downloadMd()">下載原始草稿（Markdown）</button>
+          <button class="secondary" onclick="copyWikiInstruction()">複製知識庫整理指令</button>
+        </div>
+      </div>
+      <div class="speaker">講者備忘錄：真正的入門，是讓技術可重複、讓練習可持續。</div>
+    </div>
+
+    <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+    <div class="footer">
+      <span id="pageLabel">1 / 8</span>
+      <span>吉他初學基礎知識庫</span>
+    </div>
+  </div>
+
+  <script>
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    const pageLabel = document.getElementById('pageLabel');
+    const progressBar = document.getElementById('progressBar');
+    const speakerEls = Array.from(document.querySelectorAll('.speaker'));
+    let index = 0;
+    let notesVisible = false;
+
+    function render() {
+      slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+      pageLabel.textContent = `${index + 1} / ${slides.length}`;
+      progressBar.style.width = `${((index + 1) / slides.length) * 100}%`;
+      speakerEls.forEach((ele) => {
+        ele.classList.toggle('visible', notesVisible);
+      });
+    }
+
+    function next() {
+      index = (index + 1) % slides.length;
+      render();
+    }
+
+    function prev() {
+      index = (index - 1 + slides.length) % slides.length;
+      render();
+    }
+
+    function toggleNotes() {
+      notesVisible = !notesVisible;
+      render();
+    }
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowRight' || event.key === 'PageDown') next();
+      if (event.key === 'ArrowLeft' || event.key === 'PageUp') prev();
+      if (event.key.toLowerCase() === 's') toggleNotes();
+    });
+
+    function downloadMd() {
+      const content = '# 吉他入門基礎總覽\n\n請將這份草稿整理成知識庫條目，補上標準 YAML 頁面資訊，並連結相關來源與知識條目。\n\n參考頁面：學習地圖總覽、知識庫總目錄、音伴吉他入門零基礎自學教程、音伴十課初學循序練習課表。\n';
+      const blob = new Blob([content], { type: 'text/markdown;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = '吉他入門基礎總覽.md';
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function copyWikiInstruction() {
+      const instruction = '請依據這份草稿建立或更新繁體中文知識庫條目，補上標準頁面資訊、來源引用與相關雙向連結。';
+      navigator.clipboard.writeText(instruction);
+      alert('已複製知識庫整理指令。');
+    }
+
+    render();
+  </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">TAB 六線譜讀法示意圖</title>
+  <desc id="desc">六條水平線由上而下代表第一弦至第六弦，數字表示要按的品位，數字依序讀取。</desc>
+  <defs><style>text{font-family:"Microsoft JhengHei","Noto Sans TC",sans-serif;fill:#2c1e16}.line{stroke:#9b7557;stroke-width:4}.muted{font-size:23px;fill:#725d4d}</style></defs>
+  <rect width="1200" height="650" rx="28" fill="#faf7f2"/>
+  <text x="60" y="70" font-size="36" font-weight="800">TAB：看弦線，也看數字</text>
+  <text x="60" y="108" class="muted">最上方通常是第 1 弦，最下方是第 6 弦</text>
+  <g class="line"><path d="M220 190H1050 M220 250H1050 M220 310H1050 M220 370H1050 M220 430H1050 M220 490H1050"/></g>
+  <g font-size="22" text-anchor="end"><text x="190" y="198">第 1 弦</text><text x="190" y="258">第 2 弦</text><text x="190" y="318">第 3 弦</text><text x="190" y="378">第 4 弦</text><text x="190" y="438">第 5 弦</text><text x="190" y="498">第 6 弦</text></g>
+  <g fill="#faf7f2" stroke="#d97706" stroke-width="4" font-size="34" font-weight="800" text-anchor="middle">
+    <rect x="360" y="163" width="54" height="54" rx="12"/><rect x="560" y="163" width="54" height="54" rx="12"/><rect x="760" y="163" width="54" height="54" rx="12"/>
+  </g>
+  <g fill="#2c1e16" font-size="32" font-weight="800" text-anchor="middle"><text x="387" y="201">0</text><text x="587" y="201">1</text><text x="787" y="201">3</text></g>
+  <path d="M390 550H790" stroke="#d97706" stroke-width="4"/><path d="M780 540L800 550L780 560" fill="none" stroke="#d97706" stroke-width="4"/>
+  <text x="590" y="600" text-anchor="middle" class="muted">範例位置依序閱讀；數字表示品位</text>
+</svg>

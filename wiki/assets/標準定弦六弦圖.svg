@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+  <title id="title">吉他標準定弦六弦圖</title>
+  <desc id="desc">由低音到高音依序列出第六弦 E、第五弦 A、第四弦 D、第三弦 G、第二弦 B、第一弦 E。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d97706"/></marker>
+    <style>text{font-family:"Microsoft JhengHei","Noto Sans TC",sans-serif;fill:#2c1e16}.small{font-size:22px;fill:#725d4d}.string{stroke:#9a6a47;stroke-linecap:round}</style>
+  </defs>
+  <rect width="1200" height="500" rx="28" fill="#faf7f2"/>
+  <text x="60" y="70" font-size="36" font-weight="800">標準定弦：六弦到一弦</text>
+  <text x="60" y="108" class="small">由低音弦往高音弦排列</text>
+  <g text-anchor="middle">
+    <g><line x1="190" y1="175" x2="190" y2="350" class="string" stroke-width="9"/><circle cx="190" cy="205" r="38" fill="#e9c79d"/><text x="190" y="220" font-size="42" font-weight="800">E</text><text x="190" y="405" font-size="23">第 6 弦</text><text x="190" y="438" class="small">低音</text></g>
+    <g><line x1="355" y1="175" x2="355" y2="350" class="string" stroke-width="8"/><circle cx="355" cy="205" r="38" fill="#f1d9b8"/><text x="355" y="220" font-size="42" font-weight="800">A</text><text x="355" y="405" font-size="23">第 5 弦</text></g>
+    <g><line x1="520" y1="175" x2="520" y2="350" class="string" stroke-width="7"/><circle cx="520" cy="205" r="38" fill="#e9c79d"/><text x="520" y="220" font-size="42" font-weight="800">D</text><text x="520" y="405" font-size="23">第 4 弦</text></g>
+    <g><line x1="685" y1="175" x2="685" y2="350" class="string" stroke-width="6"/><circle cx="685" cy="205" r="38" fill="#f1d9b8"/><text x="685" y="220" font-size="42" font-weight="800">G</text><text x="685" y="405" font-size="23">第 3 弦</text></g>
+    <g><line x1="850" y1="175" x2="850" y2="350" class="string" stroke-width="5"/><circle cx="850" cy="205" r="38" fill="#e9c79d"/><text x="850" y="220" font-size="42" font-weight="800">B</text><text x="850" y="405" font-size="23">第 2 弦</text></g>
+    <g><line x1="1015" y1="175" x2="1015" y2="350" class="string" stroke-width="4"/><circle cx="1015" cy="205" r="38" fill="#f1d9b8"/><text x="1015" y="220" font-size="42" font-weight="800">E</text><text x="1015" y="405" font-size="23">第 1 弦</text><text x="1015" y="438" class="small">高音</text></g>
+  </g>
+  <path d="M195 300H1008" stroke="#d97706" stroke-width="4" marker-end="url(#arrow)"/>
+  <text x="600" y="480" text-anchor="middle" class="small">E – A – D – G – B – E</text>
+</svg>

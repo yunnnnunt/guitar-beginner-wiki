@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">C 大調與 a 小調開放和弦圖</title>
+  <desc id="desc">以六弦指板圖表示 C 大調和 a 小調的空弦、不彈弦與按弦品位。</desc>
+  <defs>
+    <style>text{font-family:"Microsoft JhengHei","Noto Sans TC",sans-serif;fill:#2c1e16}.muted{font-size:18px;fill:#725d4d}.grid{stroke:#784a32;stroke-width:4}.dot{fill:#d97706;stroke:#fffaf3;stroke-width:3}</style>
+  </defs>
+  <rect width="1200" height="700" rx="28" fill="#faf7f2"/>
+  <text x="60" y="66" font-size="36" font-weight="800">兩個常用開放和弦</text>
+  <text x="60" y="103" class="muted">左至右為第 6 弦到第 1 弦；圓圈表示空弦，X 表示不彈</text>
+  <g transform="translate(40 0)">
+    <rect x="0" y="132" width="535" height="500" rx="24" fill="#fffdf8" stroke="#e5dec9" stroke-width="3"/>
+    <text x="267" y="184" text-anchor="middle" font-size="32" font-weight="800">C 大調</text>
+    <g class="grid"><path d="M115 260V520 M175 260V520 M235 260V520 M295 260V520 M355 260V520 M415 260V520"/><path d="M115 280H415 M115 340H415 M115 400H415 M115 460H415 M115 520H415"/></g>
+    <g font-size="20" text-anchor="middle"><text x="115" y="245">6</text><text x="175" y="245">5</text><text x="235" y="245">4</text><text x="295" y="245">3</text><text x="355" y="245">2</text><text x="415" y="245">1</text><text x="82" y="319">1</text><text x="82" y="379">2</text><text x="82" y="439">3</text></g>
+    <g font-size="32" text-anchor="middle" font-weight="700"><text x="115" y="222">X</text><circle cx="295" cy="216" r="12" fill="none" stroke="#2c1e16" stroke-width="4"/><circle cx="415" cy="216" r="12" fill="none" stroke="#2c1e16" stroke-width="4"/></g>
+    <circle cx="355" cy="310" r="18" class="dot"/><circle cx="235" cy="370" r="18" class="dot"/><circle cx="175" cy="430" r="18" class="dot"/>
+    <text x="267" y="585" text-anchor="middle" class="muted">第 5 弦 3 品、第 4 弦 2 品、第 2 弦 1 品</text>
+  </g>
+  <g transform="translate(625 0)">
+    <rect x="0" y="132" width="535" height="500" rx="24" fill="#fffdf8" stroke="#e5dec9" stroke-width="3"/>
+    <text x="267" y="184" text-anchor="middle" font-size="32" font-weight="800">a 小調</text>
+    <g class="grid"><path d="M115 260V520 M175 260V520 M235 260V520 M295 260V520 M355 260V520 M415 260V520"/><path d="M115 280H415 M115 340H415 M115 400H415 M115 460H415 M115 520H415"/></g>
+    <g font-size="20" text-anchor="middle"><text x="115" y="245">6</text><text x="175" y="245">5</text><text x="235" y="245">4</text><text x="295" y="245">3</text><text x="355" y="245">2</text><text x="415" y="245">1</text><text x="82" y="319">1</text><text x="82" y="379">2</text><text x="82" y="439">3</text></g>
+    <g font-size="32" text-anchor="middle" font-weight="700"><text x="115" y="222">X</text><circle cx="175" cy="216" r="12" fill="none" stroke="#2c1e16" stroke-width="4"/><circle cx="415" cy="216" r="12" fill="none" stroke="#2c1e16" stroke-width="4"/></g>
+    <circle cx="355" cy="310" r="18" class="dot"/><circle cx="295" cy="370" r="18" class="dot"/><circle cx="235" cy="370" r="18" class="dot"/>
+    <text x="267" y="585" text-anchor="middle" class="muted">第 4、3 弦 2 品；第 2 弦 1 品</text>
+  </g>
+  <text x="600" y="674" text-anchor="middle" class="muted">橘點為按弦位置</text>
+</svg>

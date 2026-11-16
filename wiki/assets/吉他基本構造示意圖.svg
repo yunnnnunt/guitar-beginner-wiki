@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 760" role="img" aria-labelledby="title desc">
+  <title id="title">吉他基本構造示意圖</title>
+  <desc id="desc">以木吉他簡圖標示琴頭、琴頸、琴身、琴弦、品絲、音孔與琴橋。</desc>
+  <defs>
+    <linearGradient id="wood" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e8b779"/>
+      <stop offset="1" stop-color="#bd7040"/>
+    </linearGradient>
+    <linearGradient id="neck" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#784a32"/>
+      <stop offset="0.5" stop-color="#9b6342"/>
+      <stop offset="1" stop-color="#784a32"/>
+    </linearGradient>
+    <style>
+      text { font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif; fill: #2c1e16; }
+      .label { font-size: 42px; font-weight: 700; }
+      .callout { stroke: #9a6a47; stroke-width: 2.5; fill: none; }
+      .dot { fill: #d97706; stroke: #fffaf3; stroke-width: 4; }
+      .fret { stroke: #e5c7a2; stroke-width: 3; }
+      .string { stroke: #f4dfbb; stroke-width: 2; }
+    </style>
+  </defs>
+  <rect width="1200" height="760" rx="28" fill="#faf7f2"/>
+  <path d="M38 112H1162" stroke="#e5dec9" stroke-width="2"/>
+  <text x="64" y="72" font-size="42" font-weight="800">吉他基本構造</text>
+  <text x="64" y="103" font-size="22" fill="#725d4d">認識琴身、琴頸與主要配件的位置</text>
+
+  <g aria-hidden="true">
+    <path d="M565 174 Q600 133 635 174 L630 218 L570 218 Z" fill="url(#wood)" stroke="#70462f" stroke-width="4"/>
+    <g fill="#d9c8a9" stroke="#6e5442" stroke-width="3">
+      <circle cx="554" cy="174" r="10"/><circle cx="554" cy="195" r="10"/><circle cx="554" cy="214" r="10"/>
+      <circle cx="646" cy="174" r="10"/><circle cx="646" cy="195" r="10"/><circle cx="646" cy="214" r="10"/>
+    </g>
+    <path d="M565 211 L635 211 L650 421 L550 421 Z" fill="url(#neck)" stroke="#70462f" stroke-width="4"/>
+    <path d="M550 410 L650 410 L663 438 C711 432 751 449 772 482 C795 519 778 561 746 582 C757 647 700 699 600 710 C500 699 443 647 454 582 C422 561 405 519 428 482 C449 449 489 432 537 438 Z" fill="url(#wood)" stroke="#70462f" stroke-width="5"/>
+    <path d="M600 443 C573 443 553 464 553 491 C553 518 573 538 600 538 C627 538 647 518 647 491 C647 464 627 443 600 443 Z" fill="#38251c" stroke="#e8c99e" stroke-width="7"/>
+    <rect x="564" y="570" width="72" height="15" rx="4" fill="#513426" stroke="#e8c99e" stroke-width="3"/>
+    <path d="M570 218V578 M582 218V578 M594 218V578 M606 218V578 M618 218V578 M630 218V578" class="string"/>
+    <path d="M562 250H638 M563 282H640 M565 314H642 M567 346H644 M569 378H646" class="fret"/>
+    <path d="M563 218H637" stroke="#f5ead7" stroke-width="7"/>
+  </g>
+
+  <g>
+    <path d="M235 178H468L548 188" class="callout"/><circle cx="548" cy="188" r="7" class="dot"/><text x="64" y="187" class="label">琴頭</text>
+    <path d="M235 306H540L570 306" class="callout"/><circle cx="570" cy="306" r="7" class="dot"/><text x="64" y="315" class="label">琴頸</text>
+    <path d="M235 512H414L438 512" class="callout"/><circle cx="438" cy="512" r="7" class="dot"/><text x="64" y="521" class="label">琴身</text>
+
+    <path d="M632 240H826" class="callout"/><circle cx="632" cy="240" r="7" class="dot"/><text x="850" y="249" class="label">琴弦</text>
+    <path d="M643 346H826" class="callout"/><circle cx="643" cy="346" r="7" class="dot"/><text x="850" y="355" class="label">品絲</text>
+    <path d="M648 490H826" class="callout"/><circle cx="648" cy="490" r="7" class="dot"/><text x="850" y="499" class="label">音孔</text>
+    <path d="M637 578H826" class="callout"/><circle cx="637" cy="578" r="7" class="dot"/><text x="850" y="587" class="label">琴橋</text>
+  </g>
+  <text x="850" y="642" font-size="21" fill="#725d4d">示意圖，非比例繪製</text>
+</svg>
